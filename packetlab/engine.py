@@ -79,44 +79,43 @@ def packet(
 
 def fixture(scenario: str) -> str:
     """Return fully invented hex records with trusted lab boundaries and no live source data."""
-    match scenario:
-        case "nominal":
-            rows = [packet(42, 0), packet(100, 8), packet(42, 1), packet(100, 9), packet(42, 2)]
-        case "sequence-gap":
-            rows = [packet(42, count) for count in (10, 11, 15, 16)]
-        case "wraparound":
-            rows = [packet(42, count) for count in (16382, 16383, 0, 1)]
-        case "duplicate-and-reuse":
-            rows = [packet(42, 10), packet(42, 10), packet(42, 10, b"DIFF"), packet(42, 11)]
-        case "out-of-order":
-            rows = [packet(42, count) for count in (50, 52, 51, 53)]
-        case "ambiguous-jump":
-            rows = [packet(42, count) for count in (0, 8192, 1)]
-        case "truncated-and-length":
-            rows = ["002ac00000", "002ac001000a11", packet(42, 2), "=FORMULA", packet(42, 3)]
-        case "unsupported-profile":
-            rows = (
-                [packet(42, 0, identification=word) for word in (0x2000, 0x1000, 0x0800)]
-                + [packet(42, 0, flags=flag) for flag in range(3)]
-                + [packet(42, 0)]
-            )
-        case "payload-limit":
-            rows = [packet(42, 0, bytes(range(256)) + bytes(range(44))), packet(42, 1)]
-        case "payload-corruption":
-            rows = [packet(42, 0), packet(42, 1, b"\x10\x21\x30\x40"), packet(42, 2)]
-        case "idle-and-recovery":
-            rows = [
-                packet(42, 0),
-                packet(2047, 100, b"\x55"),
-                packet(100, 8),
-                packet(2047, 7, b"\xaa"),
-                packet(42, 1),
-                packet(100, 9),
-            ]
-        case "empty-capture":
-            rows = []
-        case _:
-            raise ValueError("Unknown fixture")
+    if scenario == "nominal":
+        rows = [packet(42, 0), packet(100, 8), packet(42, 1), packet(100, 9), packet(42, 2)]
+    elif scenario == "sequence-gap":
+        rows = [packet(42, count) for count in (10, 11, 15, 16)]
+    elif scenario == "wraparound":
+        rows = [packet(42, count) for count in (16382, 16383, 0, 1)]
+    elif scenario == "duplicate-and-reuse":
+        rows = [packet(42, 10), packet(42, 10), packet(42, 10, b"DIFF"), packet(42, 11)]
+    elif scenario == "out-of-order":
+        rows = [packet(42, count) for count in (50, 52, 51, 53)]
+    elif scenario == "ambiguous-jump":
+        rows = [packet(42, count) for count in (0, 8192, 1)]
+    elif scenario == "truncated-and-length":
+        rows = ["002ac00000", "002ac001000a11", packet(42, 2), "=FORMULA", packet(42, 3)]
+    elif scenario == "unsupported-profile":
+        rows = (
+            [packet(42, 0, identification=word) for word in (0x2000, 0x1000, 0x0800)]
+            + [packet(42, 0, flags=flag) for flag in range(3)]
+            + [packet(42, 0)]
+        )
+    elif scenario == "payload-limit":
+        rows = [packet(42, 0, bytes(range(256)) + bytes(range(44))), packet(42, 1)]
+    elif scenario == "payload-corruption":
+        rows = [packet(42, 0), packet(42, 1, b"\x10\x21\x30\x40"), packet(42, 2)]
+    elif scenario == "idle-and-recovery":
+        rows = [
+            packet(42, 0),
+            packet(2047, 100, b"\x55"),
+            packet(100, 8),
+            packet(2047, 7, b"\xaa"),
+            packet(42, 1),
+            packet(100, 9),
+        ]
+    elif scenario == "empty-capture":
+        rows = []
+    else:
+        raise ValueError("Unknown fixture")
     return "\n".join(rows) + ("\n" if rows else "")
 
 

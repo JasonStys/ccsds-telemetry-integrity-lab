@@ -1,6 +1,6 @@
 # Validation strategy and observed local results
 
-By Jason Stys. Observed 2026-10-20 on Windows x64, Rust 1.98.1, CPython 3.14.6 and Node 24.18.1. Remote CI evidence is recorded only after actual runs; see [reports/ci-baseline.md](reports/ci-baseline.md).
+By Jason Stys. Observed 2026-10-20 on Windows x64, Rust 1.98.1, CPython 3.14.6 and Node 24.18.1. After the explicit-dispatch review change, all 188 Python tests still pass with **97.67%** branch-inclusive coverage (two fewer executable statements; no test or gate removed). The initial measured coverage in the table below was 97.68%. Remote CI evidence is recorded only after actual runs; see [reports/ci-baseline.md](reports/ci-baseline.md).
 
 | Gate                                       | Observed result                                                                                                                                            |
 | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -41,10 +41,12 @@ Rust's five named tests contain many cases; they are not 181072 independently na
 
 The compiler rejected a short-lived borrowed array in an exhaustive **test fixture**; assigning the array a scoped owner fixed its lifetime without changing production bounds. Strict Clippy requested fixed-size `as_chunks` use; the hex decoder was updated rather than suppressing the lint. A copied HTTP test was corrected to exercise an actual duplicate payload_limit field instead of merely an unknown field. Browser keyboard-scroll and hostile-response checks were present from the initial UI implementation; no axe rule was disabled. These are software verification results, not evidence of full CCSDS conformance or payload authenticity.
 
+The first CodeQL workflow completed successfully but reported `py/uninitialized-local-variable` at the common return after fixture `match` dispatch. Every case assigned rows and the default raised; finite-case and unknown-case tests passed. The dispatch was rewritten as explicit `if/elif/else` with the same strict unknown-case failure so assignment flow is clear to readers and the analyzer. All 24 reviewed hashes remain byte-identical, and all 188 tests still pass. The finding is not manually dismissed or suppressed; final publication requires inspecting the fresh scan result. Debug/code-review guidance informed the reproduce/isolate/refactor/regression process.
+
 The design/testing skills shaped the independent reference gate, bounded trust boundaries and accessible textual equivalents; release guidance requires actual exact-source CI and executable smoke, not a badge-only handoff.
 
 ## Storage and verification limits
 
-Before implementation, fresh billing showed 0.5 GB / 0.5 GB included (100%). Live artifacts across 86 repositories were 58024434 bytes; separate caches were 14347443923 bytes. Billing accumulation and current inventory differ; no unavailable API quota percentage was invented. Existing runs/artifacts/caches were left untouched. Workflows upload no Actions artifacts/caches; release assets are separate.
+Actions storage was checked before implementation using live artifact inventory and the current billing meter, with the account-level details reported privately to the owner. Billing accumulation, current artifacts and separate caches are distinct measures. Existing runs/artifacts/caches were left untouched. This repository's workflows upload no Actions artifacts/caches; release assets are separate.
 
 CI adds four OS/Python test configurations, three native builds and three Linux browser engines. Native platform success does not prove every OS distribution, device, endpoint policy or assistive technology. Advisory scans are current-service observations, not absence-of-all-vulnerabilities proofs. No real radio/link, mission telemetry, payload meaning/units, secondary header, segmentation/reassembly, raw sync, CRC/authentication, sender identity, unique/permanent loss reconciliation, signed binary or flight qualification was validated.
