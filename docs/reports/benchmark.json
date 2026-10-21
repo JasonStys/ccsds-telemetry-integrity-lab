@@ -1,0 +1,317 @@
+{
+  "cases": [
+    {
+      "id": "71acc0818d26d41c9f28ae40eab06adc2af47af06f0810cfa375155652449eca",
+      "payload_limit": 32,
+      "scenario": "nominal",
+      "totals": {
+        "accepted": 5,
+        "idle": 0,
+        "records": 5,
+        "rejected": 0,
+        "review": 0,
+        "unobserved_values": 0
+      }
+    },
+    {
+      "id": "e0e6bfbc51213733a38eaab4bc3c8123da948ba855eeb83392002f1bbda31494",
+      "payload_limit": 4096,
+      "scenario": "nominal",
+      "totals": {
+        "accepted": 5,
+        "idle": 0,
+        "records": 5,
+        "rejected": 0,
+        "review": 0,
+        "unobserved_values": 0
+      }
+    },
+    {
+      "id": "831dc503da79e65d5b1cf930825ceb79184b1102aff56a107b4d5d3f15481215",
+      "payload_limit": 32,
+      "scenario": "sequence-gap",
+      "totals": {
+        "accepted": 4,
+        "idle": 0,
+        "records": 4,
+        "rejected": 0,
+        "review": 1,
+        "unobserved_values": 3
+      }
+    },
+    {
+      "id": "ecd07446f3da9e1e79f98f91f1fc238c129db7735cafd2175cd44f1b2a6c245c",
+      "payload_limit": 4096,
+      "scenario": "sequence-gap",
+      "totals": {
+        "accepted": 4,
+        "idle": 0,
+        "records": 4,
+        "rejected": 0,
+        "review": 1,
+        "unobserved_values": 3
+      }
+    },
+    {
+      "id": "fea25356d333440a48875238bf1ec7fb099a4d3401775b71abf4beb50854e346",
+      "payload_limit": 32,
+      "scenario": "wraparound",
+      "totals": {
+        "accepted": 4,
+        "idle": 0,
+        "records": 4,
+        "rejected": 0,
+        "review": 0,
+        "unobserved_values": 0
+      }
+    },
+    {
+      "id": "f788be392e497c2286eaa6efd3b850f440d066ddcb1cef477d80e31b8c3cb7c4",
+      "payload_limit": 4096,
+      "scenario": "wraparound",
+      "totals": {
+        "accepted": 4,
+        "idle": 0,
+        "records": 4,
+        "rejected": 0,
+        "review": 0,
+        "unobserved_values": 0
+      }
+    },
+    {
+      "id": "a0ab20b1bed2fdf165d1e76996cd8c62837665f83c3d9bc115b9d58bdcb5a00e",
+      "payload_limit": 32,
+      "scenario": "duplicate-and-reuse",
+      "totals": {
+        "accepted": 4,
+        "idle": 0,
+        "records": 4,
+        "rejected": 0,
+        "review": 2,
+        "unobserved_values": 0
+      }
+    },
+    {
+      "id": "4cd4777ae3af509ec4ce51230ba41518b08e58c9b248710052d89ebe42a1230d",
+      "payload_limit": 4096,
+      "scenario": "duplicate-and-reuse",
+      "totals": {
+        "accepted": 4,
+        "idle": 0,
+        "records": 4,
+        "rejected": 0,
+        "review": 2,
+        "unobserved_values": 0
+      }
+    },
+    {
+      "id": "7ffc5d5e027588ea13c26b64ea63e7b3fb30b54d4c044d1b4643fecd0b359364",
+      "payload_limit": 32,
+      "scenario": "out-of-order",
+      "totals": {
+        "accepted": 4,
+        "idle": 0,
+        "records": 4,
+        "rejected": 0,
+        "review": 2,
+        "unobserved_values": 1
+      }
+    },
+    {
+      "id": "dc3b6e215c92eaf3e48f827f02997a6f726f7aa1f8d420303a7ec23f00d1479d",
+      "payload_limit": 4096,
+      "scenario": "out-of-order",
+      "totals": {
+        "accepted": 4,
+        "idle": 0,
+        "records": 4,
+        "rejected": 0,
+        "review": 2,
+        "unobserved_values": 1
+      }
+    },
+    {
+      "id": "4e9744ebe72ac976543ceb91e27206db0991e73fecec9a2b971dd22be0393dda",
+      "payload_limit": 32,
+      "scenario": "ambiguous-jump",
+      "totals": {
+        "accepted": 3,
+        "idle": 0,
+        "records": 3,
+        "rejected": 0,
+        "review": 1,
+        "unobserved_values": 0
+      }
+    },
+    {
+      "id": "34137b21ed64566a99b0bb50dc7fd000f9209da89b59292abddddadb0aabdc68",
+      "payload_limit": 4096,
+      "scenario": "ambiguous-jump",
+      "totals": {
+        "accepted": 3,
+        "idle": 0,
+        "records": 3,
+        "rejected": 0,
+        "review": 1,
+        "unobserved_values": 0
+      }
+    },
+    {
+      "id": "943019d153c9345d1099e5daba708f62fa006b37ff0abdc9a15a0efb6f6e7feb",
+      "payload_limit": 32,
+      "scenario": "truncated-and-length",
+      "totals": {
+        "accepted": 2,
+        "idle": 0,
+        "records": 5,
+        "rejected": 3,
+        "review": 0,
+        "unobserved_values": 0
+      }
+    },
+    {
+      "id": "d563ad67760e70c452af6f99b8f7b9bc6e0c70d567acc52d84d00c951425864a",
+      "payload_limit": 4096,
+      "scenario": "truncated-and-length",
+      "totals": {
+        "accepted": 2,
+        "idle": 0,
+        "records": 5,
+        "rejected": 3,
+        "review": 0,
+        "unobserved_values": 0
+      }
+    },
+    {
+      "id": "1431e48ff1d0bda3626fca1ebf49281f2092a293240f3f45313c582e6cda03c3",
+      "payload_limit": 32,
+      "scenario": "unsupported-profile",
+      "totals": {
+        "accepted": 1,
+        "idle": 0,
+        "records": 7,
+        "rejected": 6,
+        "review": 0,
+        "unobserved_values": 0
+      }
+    },
+    {
+      "id": "95d0b40657778bae8799d452311a894502f93402d53b120175f6f472ff89e586",
+      "payload_limit": 4096,
+      "scenario": "unsupported-profile",
+      "totals": {
+        "accepted": 1,
+        "idle": 0,
+        "records": 7,
+        "rejected": 6,
+        "review": 0,
+        "unobserved_values": 0
+      }
+    },
+    {
+      "id": "cb65e4be84b92a510f95d8f2a6b5a1eab08f68c7a8727a5e518e5a2cd59604ca",
+      "payload_limit": 32,
+      "scenario": "payload-limit",
+      "totals": {
+        "accepted": 1,
+        "idle": 0,
+        "records": 2,
+        "rejected": 1,
+        "review": 0,
+        "unobserved_values": 0
+      }
+    },
+    {
+      "id": "aedfd169a66e42f04adf3c284b99d6e8320fb49fb42301e77b6a98b43bd0593c",
+      "payload_limit": 4096,
+      "scenario": "payload-limit",
+      "totals": {
+        "accepted": 2,
+        "idle": 0,
+        "records": 2,
+        "rejected": 0,
+        "review": 0,
+        "unobserved_values": 0
+      }
+    },
+    {
+      "id": "27d485a3feb9382d62dd5417582d592bd68a262660d7e55feeca3dc0471a6660",
+      "payload_limit": 32,
+      "scenario": "payload-corruption",
+      "totals": {
+        "accepted": 3,
+        "idle": 0,
+        "records": 3,
+        "rejected": 0,
+        "review": 0,
+        "unobserved_values": 0
+      }
+    },
+    {
+      "id": "1a8f2874332af92d551c04f8de3a0f30864922c589776ae7178fecbb9462d763",
+      "payload_limit": 4096,
+      "scenario": "payload-corruption",
+      "totals": {
+        "accepted": 3,
+        "idle": 0,
+        "records": 3,
+        "rejected": 0,
+        "review": 0,
+        "unobserved_values": 0
+      }
+    },
+    {
+      "id": "8a6666f86d1d96243aad8837964904263b9ecb9399e3dfc4768d60c64721c4b4",
+      "payload_limit": 32,
+      "scenario": "idle-and-recovery",
+      "totals": {
+        "accepted": 6,
+        "idle": 2,
+        "records": 6,
+        "rejected": 0,
+        "review": 0,
+        "unobserved_values": 0
+      }
+    },
+    {
+      "id": "2b987e62ad4ff3e84aa5b4325272b492a60d97a2ae803f51566b3954a7b3ee1b",
+      "payload_limit": 4096,
+      "scenario": "idle-and-recovery",
+      "totals": {
+        "accepted": 6,
+        "idle": 2,
+        "records": 6,
+        "rejected": 0,
+        "review": 0,
+        "unobserved_values": 0
+      }
+    },
+    {
+      "id": "1621a6618278ef798e042b775139ca9e0194e29baf50d722d13315ee68dff5f1",
+      "payload_limit": 32,
+      "scenario": "empty-capture",
+      "totals": {
+        "accepted": 0,
+        "idle": 0,
+        "records": 0,
+        "rejected": 0,
+        "review": 0,
+        "unobserved_values": 0
+      }
+    },
+    {
+      "id": "57bfe880eda700d2a3005fb4dcfb276e518a7bb22c705d730e7c096d5974262d",
+      "payload_limit": 4096,
+      "scenario": "empty-capture",
+      "totals": {
+        "accepted": 0,
+        "idle": 0,
+        "records": 0,
+        "rejected": 0,
+        "review": 0,
+        "unobserved_values": 0
+      }
+    }
+  ],
+  "description": "Synthetic Rust/Python packet contract summaries by Jason Stys; no operational claims"
+}

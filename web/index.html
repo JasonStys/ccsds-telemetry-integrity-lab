@@ -1,0 +1,265 @@
+<!doctype html>
+<!-- CCSDS Telemetry Integrity Lab by Jason Stys. Landmarks and variables: docs/CODE_INDEX.md. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A safe Rust telemetry parser, independent reference and byte inspection lab by Jason Stys."
+    />
+    <title>CCSDS Telemetry Integrity Lab — Jason Stys</title>
+    <script type="module" src="/main.ts"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to workspace</a>
+    <header>
+      <a class="brand" href="/" aria-label="Telemetry integrity home"
+        ><span class="brand-icon" aria-hidden="true">[01]</span
+        ><span
+          >TELEMETRY / INTEGRITY<span class="brand-sub">A SYSTEMS ENGINEERING LAB</span></span
+        ></a
+      >
+      <nav aria-label="Primary">
+        <span class="local">LOCAL ONLY</span><a href="#guide">User guide ↗</a
+        ><a href="https://github.com/JasonStys" target="_blank" rel="noopener noreferrer"
+          >Jason Stys ↗</a
+        >
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">CCSDS TELEMETRY INTEGRITY LAB / v1.0.0</p>
+          <h1>Read the bytes.<br /><span>Know the limits.</span></h1>
+          <p class="lede">Inspect a packet. Trace its sequence. Challenge the result.</p>
+        </div>
+        <aside class="hero-note">
+          <span class="profile-tag">RESTRICTED PROFILE / 133.0-B-2</span>
+          <p>
+            Safe Rust parser.<br />Independent Python verification.<br />Every record accounted for.
+          </p>
+          <span class="muted"
+            >Synthetic, offline and deliberately bounded.<br />No radio, spacecraft or command
+            connection.</span
+          >
+        </aside>
+      </section>
+      <div class="boundary">
+        <span aria-hidden="true">!</span>
+        <p>
+          <strong>Valid structure is not proof of integrity.</strong> This profile has no payload
+          checksum or authentication. A changed payload can still pass every header check.
+        </p>
+      </div>
+      <div class="workbench">
+        <aside class="sidebar">
+          <p class="eyebrow">01 / CONFIGURE</p>
+          <h2>Choose your evidence.</h2>
+          <form id="controls">
+            <label
+              >Capture scenario<select id="scenario">
+                <option value="nominal">Interleaved clean telemetry</option>
+                <option value="sequence-gap">Missing sequence values</option>
+                <option value="wraparound">Counter wraparound</option>
+                <option value="duplicate-and-reuse">Repeat vs counter reuse</option>
+                <option value="out-of-order">Delayed record after a gap</option>
+                <option value="ambiguous-jump">Half-range ambiguity</option>
+                <option value="truncated-and-length">Truncation & record recovery</option>
+                <option value="unsupported-profile">Unsupported profile</option>
+                <option value="payload-limit">Payload cap exceeded</option>
+                <option value="payload-corruption">Undetectable payload bit flip</option>
+                <option value="idle-and-recovery">Idle & separate APID streams</option>
+                <option value="empty-capture">Empty capture</option>
+              </select></label
+            ><label
+              >Payload limit<select id="payload_limit">
+                <option value="32">32 bytes</option>
+                <option value="128" selected>128 bytes</option>
+                <option value="4096">4096 bytes</option>
+              </select></label
+            ><label
+              >Forward review window<select id="forward_window">
+                <option value="16">16 sequence steps</option>
+                <option value="256" selected>256 sequence steps</option>
+                <option value="8191">8191 sequence steps</option>
+              </select></label
+            ><button class="primary" id="run-button" type="submit">
+              Inspect capture <span aria-hidden="true">→</span>
+            </button>
+          </form>
+          <label class="remember"
+            ><input type="checkbox" id="remember" /> Remember controls on this device</label
+          >
+          <div class="profile">
+            <h3>Supported packet profile</h3>
+            <dl>
+              <div>
+                <dt>Version</dt>
+                <dd>000</dd>
+              </div>
+              <div>
+                <dt>Type</dt>
+                <dd>Telemetry only</dd>
+              </div>
+              <div>
+                <dt>Secondary header</dt>
+                <dd>Absent</dd>
+              </div>
+              <div>
+                <dt>Sequence flags</dt>
+                <dd>11 · unsegmented</dd>
+              </div>
+            </dl>
+            <p>Other valid CCSDS variants may be rejected by this deliberately narrow profile.</p>
+          </div>
+          <a
+            class="source-link"
+            href="https://github.com/JasonStys/ccsds-telemetry-integrity-lab/tree/main/docs"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Model & source documentation ↗</a
+          >
+        </aside>
+        <div class="workspace">
+          <p id="status" role="status" aria-live="polite">Preparing the local parser…</p>
+          <section id="error" role="alert" class="error" hidden>
+            <h2>Inspection unavailable</h2>
+            <p>
+              Previous evidence is hidden. Check the local service and native worker, then retry. No
+              simulated success is substituted.
+            </p>
+            <button type="button" id="retry">Retry inspection</button>
+          </section>
+          <div id="results" hidden>
+            <section class="metrics" id="metrics" aria-label="Complete capture summary"></section>
+            <section class="panel" aria-labelledby="ledger-heading">
+              <div class="panel-head">
+                <div>
+                  <p class="eyebrow">02 / RECEIPT LEDGER</p>
+                  <h2 id="ledger-heading">Follow the record trail.</h2>
+                </div>
+                <span class="agreement" id="agreement"></span>
+              </div>
+              <div class="ledger-toolbar">
+                <p>Capture order—not elapsed time.</p>
+                <label
+                  >Show records<select id="record-filter">
+                    <option value="all">All records</option>
+                    <option value="review">Needs review</option>
+                    <option value="rejected">Rejected</option>
+                    <option value="accepted">Structurally accepted</option>
+                  </select></label
+                >
+              </div>
+              <div
+                class="table-scroll"
+                tabindex="0"
+                role="region"
+                aria-label="Scrollable record ledger"
+              >
+                <table>
+                  <caption class="sr-only">
+                    Record structure and continuity review; use Inspect to view bytes
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Record</th>
+                      <th scope="col">APID / count</th>
+                      <th scope="col">Bytes actual / expected</th>
+                      <th scope="col">Outcome</th>
+                      <th scope="col">Continuity</th>
+                    </tr>
+                  </thead>
+                  <tbody id="records"></tbody>
+                </table>
+              </div>
+              <p class="empty" id="empty" hidden>
+                No records match this view. Nothing is hidden from the complete report.
+              </p>
+              <p class="scenario-note" id="scenario-note"></p>
+            </section>
+            <section class="panel inspector" aria-labelledby="inspector-heading">
+              <div class="panel-head">
+                <div>
+                  <p class="eyebrow">03 / BYTE INSPECTOR</p>
+                  <h2 id="inspector-heading">The header, without guesswork.</h2>
+                </div>
+                <span id="selected-record" class="pill"></span>
+              </div>
+              <div id="inspection"></div>
+            </section>
+            <section class="export-panel" aria-labelledby="export-heading">
+              <div>
+                <p class="eyebrow">04 / REPRODUCIBLE EVIDENCE</p>
+                <h2 id="export-heading">Keep the inputs and the answer.</h2>
+                <p>Full records, profile, reference agreement, sequence decisions and scope.</p>
+              </div>
+              <nav aria-label="Download evidence" id="downloads"></nav>
+            </section>
+            <p id="evidence-id" class="evidence-id"></p>
+          </div>
+        </div>
+      </div>
+      <section id="guide" class="guide">
+        <p class="eyebrow">USER GUIDE / TRUST BOUNDARIES</p>
+        <h2>What the evidence can—and cannot—tell you.</h2>
+        <div class="guide-grid">
+          <article>
+            <h3>Inspect a capture</h3>
+            <p>
+              Choose a synthetic scenario and run inspection. Click a record to read the six-byte
+              primary header and opaque payload. Filters affect the ledger only; totals and exports
+              retain every record.
+            </p>
+          </article>
+          <article>
+            <h3>Review continuity</h3>
+            <p>
+              Counts wrap modulo 16384 and are tracked per APID in one capture/session. Gaps,
+              late/reset ambiguity, exact baseline repeats and counter reuse remain distinct. Review
+              flags are not automatic operational decisions.
+            </p>
+          </article>
+          <article>
+            <h3>Understand recovery</h3>
+            <p>
+              Each newline in the lab hex capture supplies a trusted record boundary. A malformed
+              record cannot swallow the next one. Raw CCSDS byte-stream resynchronization, secondary
+              headers, segmentation and transfer frames are not implemented.
+            </p>
+          </article>
+          <article>
+            <h3>Protect your data</h3>
+            <p>
+              No accounts, analytics, ads, uploads, runtime APIs or live systems. CLI-only local
+              imports and optional SQL history stay on your device. Preferences save only controls
+              when you opt in. Use synthetic, non-sensitive captures.
+            </p>
+          </article>
+        </div>
+        <p class="guide-links">
+          <a
+            href="https://github.com/JasonStys/ccsds-telemetry-integrity-lab/blob/main/docs/USER_GUIDE.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            >CLI, file format & help ↗</a
+          ><a
+            href="https://github.com/JasonStys/ccsds-telemetry-integrity-lab/issues"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Questions or issues ↗</a
+          >
+        </p>
+      </section>
+    </main>
+    <footer>
+      <span
+        >Designed & engineered by
+        <a href="https://github.com/JasonStys" target="_blank" rel="noopener noreferrer"
+          >Jason Stys</a
+        ></span
+      ><span>ORIGINAL EDUCATIONAL SOFTWARE / MIT / NOT FLIGHT-QUALIFIED</span>
+    </footer>
+  </body>
+</html>

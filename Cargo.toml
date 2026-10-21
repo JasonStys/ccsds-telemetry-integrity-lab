@@ -1,0 +1,19 @@
+# Dependency-free safe Rust packet validator by Jason Stys; field/function lines: docs/CODE_INDEX.md.
+[package]
+name = "ccsds-telemetry-integrity-lab"
+version = "1.0.0"
+edition = "2024"
+rust-version = "1.98"
+authors = ["Jason Stys"]
+license = "MIT"
+[lib]
+path = "rust/lib.rs"
+[[bin]]
+name = "telemetry-core"
+path = "rust/main.rs"
+[profile.release]
+overflow-checks = true
+[lints.rust]
+unsafe_code = "forbid"
+[lints.clippy]
+all = "deny"
