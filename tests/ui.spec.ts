@@ -32,6 +32,24 @@ test("native/reference gap evidence and exact header bits are inspectable", asyn
   await expect(page.locator(".bit-cell")).toHaveCount(48);
   expect(errors).toEqual([]);
 });
+test("APID timeline preserves late decisions and explains ambiguity", async ({ page }) => {
+  await ready(page);
+  await inspectCase(page, "out-of-order");
+  await page.locator("#apid-timelines summary").first().click();
+  await expect(page.locator("#apid-timelines")).toContainText("provisional-gap-recovery");
+  await expect(page.locator("#apid-timelines")).toContainText("original: late-or-reset");
+  await page
+    .locator("#apid-timelines li")
+    .filter({ hasText: "provisional-gap-recovery" })
+    .getByRole("button")
+    .click();
+  await expect(page.locator("#inspection")).toContainText("late or reset");
+  await inspectCase(page, "ambiguous-jump");
+  await page.locator("#apid-timelines summary").first().click();
+  await expect(page.locator("#apid-timelines")).toContainText("ambiguity-boundary");
+  await inspectCase(page, "empty-capture");
+  await expect(page.locator("#apid-timelines")).toHaveText("No accepted non-idle APID streams.");
+});
 test("wraparound, delayed records and duplicates retain separate meanings", async ({ page }) => {
   await ready(page);
   await inspectCase(page, "wraparound");

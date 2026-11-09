@@ -51,6 +51,29 @@ export interface Evidence {
   scenario: string;
   settings: { payload_limit: number; forward_window: number };
   rows: RecordInfo[];
+  apid_timelines: {
+    apid: number;
+    provisional_total: number;
+    recovered: number;
+    outstanding: number;
+    uncertain: number;
+    events: {
+      record: number;
+      sequence: number;
+      original_decision: string;
+      kind: string;
+      segment: number;
+      gap_origin_record?: number;
+    }[];
+    gaps: {
+      origin_record: number;
+      first_sequence: number;
+      count: number;
+      remaining: number;
+      status: string;
+      recoveries: { sequence: number; record: number }[];
+    }[];
+  }[];
   totals: {
     records: number;
     accepted: number;
