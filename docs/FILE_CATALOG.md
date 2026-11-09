@@ -17,6 +17,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `SECURITY.md` — # Security and assurance boundaries
 - `docs/API.md` — # Input, native, HTTP and report contracts
 - `docs/ARCHITECTURE.md` — # Architecture and decisions
+- `docs/CONTINUITY_REVIEW.md` — # APID continuity review
 - `docs/MODEL.md` — # Packet profile and continuity semantics
 - `docs/RELEASE.md` — # Release verification and rollback
 - `docs/THIRD_PARTY.md` — # Licensing, toolchain and sources
@@ -24,6 +25,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/VALIDATION.md` — # Validation strategy and observed local results
 - `docs/images/inspector.jpg` — Binary screenshot asset from local application validation
 - `docs/images/overview.jpg` — Binary screenshot asset from local application validation
+- `docs/reports/PRACTICAL_WORKFLOWS_20261109.md` — # APID review validation — 2026-11-09
 - `docs/reports/benchmark.json` — Reviewed synthetic packetlab benchmark summaries and deterministic evidence hashes.
 - `docs/reports/ci-baseline.md` — # CI and portable verification record
 - `examples/nominal.hex` — Invented newline-delimited hex capture with independent trusted record boundaries.
@@ -41,6 +43,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `packetlab/reports.py` — """Inert portable exports and explicit immutable SQL history by Jason Stys.
 - `packetlab/resources/history.sql` — -- Immutable local experiment history by Jason Stys. Tables/triggers: docs/CODE_INDEX.md.
 - `packetlab/server.py` — """Loopback-only, read-only HTTP application by Jason Stys; not an Internet server.
+- `packetlab/timeline.py` — """Conservative APID continuity timelines by Jason Stys.
 - `playwright.config.ts` — /** Cross-engine website integration configuration by Jason Stys.
 - `pyproject.toml` — Python metadata, supported runtimes, strict lint/type/test and coverage gates.
 - `requirements-dev.in` — Scientific test, type, style, audit and packaging dependency inputs.
@@ -52,6 +55,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `rust/main.rs` — //! Fixed-input bounded worker CLI by Jason Stys; stdin is a lab hex-record capture, not RF.
 - `tests/test_io.py` — """CLI, report, SQLite and actual loopback HTTP integration tests by Jason Stys.
 - `tests/test_packets.py` — """Independent native/reference contracts and stateful edge cases by Jason Stys.
+- `tests/test_timeline.py` — """Independent sequence-recovery traces by Jason Stys.
 - `tests/ui.spec.ts` — /** Real Rust/service/browser acceptance tests by Jason Stys.
 - `tools/benchmark.py` — """Deterministic cross-language packet contracts and descriptive timing by Jason Stys.
 - `tools/package_app.py` — """Build portable native bundles from reviewed source by Jason Stys.

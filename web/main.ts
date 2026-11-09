@@ -115,6 +115,41 @@ function renderLedger(): void {
 /** Render fully escaped complete evidence; downloads are fixed same-origin attachment routes. */
 function render(run: Evidence): void {
   const t = run.totals;
+  element("apid-timelines").replaceChildren();
+  if (!run.apid_timelines.length)
+    element("apid-timelines").textContent = "No accepted non-idle APID streams.";
+  for (const stream of run.apid_timelines) {
+    const section = document.createElement("details");
+    const summary = document.createElement("summary");
+    summary.textContent = `APID ${stream.apid} · ${stream.provisional_total} provisional values · ${stream.recovered} observed late · ${stream.outstanding} outstanding · ${stream.uncertain} unresolved across ambiguity`;
+    const gaps = document.createElement("p");
+    gaps.textContent =
+      stream.gaps
+        .map(
+          (gap) =>
+            `After record ${gap.origin_record + 1}: ${gap.count} values starting ${gap.first_sequence} modulo 16384; ${gap.status}, ${gap.remaining} remaining. Recoveries: ${gap.recoveries.map((entry) => `${entry.sequence} at record ${entry.record + 1}`).join(", ") || "none"}.`,
+        )
+        .join("\n") || "No tracked provisional gaps.";
+    const events = document.createElement("ol");
+    for (const event of stream.events) {
+      const item = document.createElement("li");
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = `Record ${event.record + 1}`;
+      button.addEventListener("click", () => {
+        selected = event.record;
+        inspect();
+        renderLedger();
+      });
+      item.append(
+        button,
+        ` · count ${event.sequence} · segment ${event.segment + 1} · ${event.kind} · original: ${event.original_decision}`,
+      );
+      events.append(item);
+    }
+    section.append(summary, gaps, events);
+    element("apid-timelines").append(section);
+  }
   element("metrics").innerHTML = [
     ["STRUCTURALLY ACCEPTED", t.accepted, "Includes idle and review records"],
     ["REJECTED", t.rejected, "Profile or structure mismatch"],

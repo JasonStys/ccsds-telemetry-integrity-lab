@@ -132,6 +132,16 @@
             <button type="button" id="retry">Retry inspection</button>
           </section>
           <div id="results" hidden>
+            <section class="panel" aria-labelledby="apid-heading">
+              <h2 id="apid-heading">APID continuity review</h2>
+              <p>
+                Gaps are provisional observations, not confirmed loss. A uniquely matching late
+                counter can be recorded as recovered; original decisions remain unchanged. Ambiguous
+                jumps, reuse or unmatched late/reset records end reconciliation. Review segments do
+                not prove sender restarts or payload authenticity.
+              </p>
+              <div id="apid-timelines"></div>
+            </section>
             <section class="metrics" id="metrics" aria-label="Complete capture summary"></section>
             <section class="panel" aria-labelledby="ledger-heading">
               <div class="panel-head">

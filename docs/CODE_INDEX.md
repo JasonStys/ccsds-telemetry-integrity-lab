@@ -44,100 +44,100 @@ Line numbers refer to formatted source, not this generated document.
 
 | Line | Definition / variable / structural identifier |
 | --- | --- |
-| 18 | `variable CHOICES` |
-| 19 | `variable SCENARIOS` |
-| 33 | `variable NOTES` |
-| 41 | `definition Settings` |
-| 44 | `variable scenario` |
-| 45 | `variable payload_limit` |
-| 46 | `variable forward_window` |
-| 48 | `definition __post_init__` |
-| 48 | `parameter self` |
-| 52 | `variable choices` |
-| 52 | `variable key` |
-| 53 | `variable value` |
-| 58 | `definition packet` |
-| 59 | `parameter apid` |
-| 60 | `parameter count` |
-| 61 | `parameter payload` |
-| 62 | `parameter flags` |
-| 63 | `parameter identification` |
-| 80 | `definition fixture` |
-| 80 | `parameter scenario` |
-| 83 | `variable rows` |
-| 85 | `variable count` |
-| 85 | `variable rows` |
-| 87 | `variable count` |
-| 87 | `variable rows` |
-| 89 | `variable rows` |
-| 91 | `variable count` |
-| 91 | `variable rows` |
-| 93 | `variable count` |
-| 93 | `variable rows` |
-| 95 | `variable rows` |
-| 97 | `variable rows` |
-| 98 | `variable word` |
-| 99 | `variable flag` |
-| 103 | `variable rows` |
-| 105 | `variable rows` |
-| 107 | `variable rows` |
-| 116 | `variable rows` |
-| 122 | `definition canonical` |
-| 122 | `parameter data` |
-| 127 | `definition run_id` |
-| 127 | `parameter data` |
-| 130 | `variable key` |
-| 130 | `variable value` |
-| 134 | `definition analyze` |
-| 134 | `parameter settings` |
-| 134 | `parameter source` |
-| 134 | `parameter text` |
-| 136 | `variable lines` |
-| 137 | `variable native` |
-| 138 | `variable line` |
-| 138 | `variable reference` |
-| 141 | `variable previous` |
-| 142 | `variable rows` |
-| 143 | `variable index` |
-| 143 | `variable line` |
-| 143 | `variable result` |
-| 144 | `variable advance` |
-| 144 | `variable disposition` |
-| 144 | `variable gap` |
-| 145 | `variable header` |
-| 147 | `variable apid` |
-| 147 | `variable count` |
-| 149 | `variable disposition` |
-| 151 | `variable advance` |
-| 151 | `variable disposition` |
-| 153 | `variable last` |
-| 153 | `variable last_payload` |
-| 154 | `variable delta` |
-| 156 | `variable disposition` |
-| 162 | `variable advance` |
-| 162 | `variable disposition` |
-| 164 | `variable advance` |
-| 164 | `variable disposition` |
-| 164 | `variable gap` |
-| 166 | `variable disposition` |
-| 168 | `variable disposition` |
-| 170 | `variable disposition` |
-| 173 | `variable review` |
-| 193 | `variable result` |
-| 204 | `variable row` |
-| 205 | `variable row` |
+| 19 | `variable CHOICES` |
+| 20 | `variable SCENARIOS` |
+| 34 | `variable NOTES` |
+| 42 | `definition Settings` |
+| 45 | `variable scenario` |
+| 46 | `variable payload_limit` |
+| 47 | `variable forward_window` |
+| 49 | `definition __post_init__` |
+| 49 | `parameter self` |
+| 53 | `variable choices` |
+| 53 | `variable key` |
+| 54 | `variable value` |
+| 59 | `definition packet` |
+| 60 | `parameter apid` |
+| 61 | `parameter count` |
+| 62 | `parameter payload` |
+| 63 | `parameter flags` |
+| 64 | `parameter identification` |
+| 81 | `definition fixture` |
+| 81 | `parameter scenario` |
+| 84 | `variable rows` |
+| 86 | `variable count` |
+| 86 | `variable rows` |
+| 88 | `variable count` |
+| 88 | `variable rows` |
+| 90 | `variable rows` |
+| 92 | `variable count` |
+| 92 | `variable rows` |
+| 94 | `variable count` |
+| 94 | `variable rows` |
+| 96 | `variable rows` |
+| 98 | `variable rows` |
+| 99 | `variable word` |
+| 100 | `variable flag` |
+| 104 | `variable rows` |
+| 106 | `variable rows` |
+| 108 | `variable rows` |
+| 117 | `variable rows` |
+| 123 | `definition canonical` |
+| 123 | `parameter data` |
+| 128 | `definition run_id` |
+| 128 | `parameter data` |
+| 131 | `variable key` |
+| 131 | `variable value` |
+| 135 | `definition analyze` |
+| 135 | `parameter settings` |
+| 135 | `parameter source` |
+| 135 | `parameter text` |
+| 137 | `variable lines` |
+| 138 | `variable native` |
+| 139 | `variable line` |
+| 139 | `variable reference` |
+| 142 | `variable previous` |
+| 143 | `variable rows` |
+| 144 | `variable index` |
+| 144 | `variable line` |
+| 144 | `variable result` |
+| 145 | `variable advance` |
+| 145 | `variable disposition` |
+| 145 | `variable gap` |
+| 146 | `variable header` |
+| 148 | `variable apid` |
+| 148 | `variable count` |
+| 150 | `variable disposition` |
+| 152 | `variable advance` |
+| 152 | `variable disposition` |
+| 154 | `variable last` |
+| 154 | `variable last_payload` |
+| 155 | `variable delta` |
+| 157 | `variable disposition` |
+| 163 | `variable advance` |
+| 163 | `variable disposition` |
+| 165 | `variable advance` |
+| 165 | `variable disposition` |
+| 165 | `variable gap` |
+| 167 | `variable disposition` |
+| 169 | `variable disposition` |
+| 171 | `variable disposition` |
+| 174 | `variable review` |
+| 194 | `variable result` |
 | 206 | `variable row` |
 | 207 | `variable row` |
 | 208 | `variable row` |
-| 230 | `definition build_run` |
-| 230 | `parameter settings` |
-| 235 | `definition build_import` |
-| 235 | `parameter path` |
-| 235 | `parameter settings` |
-| 237 | `variable source` |
-| 238 | `variable data` |
-| 242 | `variable text` |
-| 248 | `definition catalog` |
+| 209 | `variable row` |
+| 210 | `variable row` |
+| 232 | `definition build_run` |
+| 232 | `parameter settings` |
+| 237 | `definition build_import` |
+| 237 | `parameter path` |
+| 237 | `parameter settings` |
+| 239 | `variable source` |
+| 240 | `variable data` |
+| 244 | `variable text` |
+| 250 | `definition catalog` |
 
 ## packetlab/native.py
 
@@ -272,6 +272,36 @@ Line numbers refer to formatted source, not this generated document.
 | 152 | `parameter assets` |
 | 152 | `parameter port` |
 | 154 | `variable server` |
+
+## packetlab/timeline.py
+
+| Line | Definition / variable / structural identifier |
+| --- | --- |
+| 10 | `definition timelines` |
+| 10 | `parameter rows` |
+| 18 | `variable streams` |
+| 19 | `variable row` |
+| 20 | `variable header` |
+| 23 | `variable apid` |
+| 23 | `variable sequence` |
+| 24 | `variable stream` |
+| 27 | `variable disposition` |
+| 28 | `variable event` |
+| 37 | `variable count` |
+| 52 | `variable matching` |
+| 54 | `variable gap` |
+| 59 | `variable pending` |
+| 61 | `variable gap` |
+| 62 | `variable entry` |
+| 75 | `variable gap` |
+| 81 | `variable result` |
+| 82 | `variable apid` |
+| 83 | `variable stream` |
+| 84 | `variable gap` |
+| 98 | `variable gap` |
+| 99 | `variable gap` |
+| 101 | `variable gap` |
+| 103 | `variable gap` |
 
 ## playwright.config.ts
 
@@ -582,6 +612,29 @@ Line numbers refer to formatted source, not this generated document.
 | 252 | `parameter args` |
 | 257 | `definition test_fixture_rejection` |
 
+## tests/test_timeline.py
+
+| Line | Definition / variable / structural identifier |
+| --- | --- |
+| 11 | `definition capture` |
+| 11 | `parameter counts` |
+| 13 | `variable count` |
+| 16 | `definition test_wrap_recovery_duplicate_preserves_original_decisions` |
+| 18 | `variable run` |
+| 19 | `variable stream` |
+| 28 | `variable row` |
+| 41 | `definition test_ambiguity_boundaries_do_not_claim_late_recovery` |
+| 43 | `variable counts` |
+| 44 | `variable run` |
+| 45 | `variable stream` |
+| 50 | `variable run` |
+| 58 | `definition test_idle_rejected_and_other_apid_are_isolated` |
+| 60 | `variable run` |
+| 67 | `variable s` |
+| 72 | `definition test_maximum_gap_stays_compressed` |
+| 74 | `variable run` |
+| 77 | `variable stream` |
+
 ## tests/ui.spec.ts
 
 | Line | Definition / variable / structural identifier |
@@ -591,14 +644,14 @@ Line numbers refer to formatted source, not this generated document.
 | 15 | `inspectCase` |
 | 15 | `scenario` |
 | 24 | `errors` |
-| 84 | `waiting` |
-| 86 | `download` |
-| 88 | `path` |
-| 89 | `text` |
-| 104 | `payload` |
-| 106 | `response` |
-| 107 | `body` |
-| 137 | `scan` |
+| 102 | `waiting` |
+| 104 | `download` |
+| 106 | `path` |
+| 107 | `text` |
+| 122 | `payload` |
+| 124 | `response` |
+| 125 | `body` |
+| 155 | `scan` |
 
 ## tools/benchmark.py
 
@@ -779,29 +832,49 @@ Line numbers refer to formatted source, not this generated document.
 | 51 | `scenario` |
 | 52 | `settings` |
 | 53 | `rows` |
-| 54 | `totals` |
-| 55 | `records` |
-| 56 | `accepted` |
-| 57 | `rejected` |
-| 58 | `review` |
-| 59 | `idle` |
-| 60 | `unobserved_values` |
-| 62 | `note` |
-| 66 | `escapeText` |
-| 74 | `raw` |
-| 74 | `readPreferences` |
-| 77 | `obj` |
-| 79 | `value` |
-| 95 | `query` |
-| 102 | `headerMarkup` |
-| 102 | `raw` |
-| 105 | `bits` |
-| 108 | `fields` |
-| 117 | `position` |
-| 118 | `sections` |
-| 120 | `start` |
-| 125 | `cells` |
-| 131 | `header-title` |
+| 54 | `apid_timelines` |
+| 55 | `apid` |
+| 56 | `provisional_total` |
+| 57 | `recovered` |
+| 58 | `outstanding` |
+| 59 | `uncertain` |
+| 60 | `events` |
+| 61 | `record` |
+| 62 | `sequence` |
+| 63 | `original_decision` |
+| 64 | `kind` |
+| 65 | `segment` |
+| 66 | `gap_origin_record` |
+| 68 | `gaps` |
+| 69 | `origin_record` |
+| 70 | `first_sequence` |
+| 71 | `count` |
+| 72 | `remaining` |
+| 73 | `status` |
+| 74 | `recoveries` |
+| 77 | `totals` |
+| 78 | `records` |
+| 79 | `accepted` |
+| 80 | `rejected` |
+| 81 | `review` |
+| 82 | `idle` |
+| 83 | `unobserved_values` |
+| 85 | `note` |
+| 89 | `escapeText` |
+| 97 | `raw` |
+| 97 | `readPreferences` |
+| 100 | `obj` |
+| 102 | `value` |
+| 118 | `query` |
+| 125 | `headerMarkup` |
+| 125 | `raw` |
+| 128 | `bits` |
+| 131 | `fields` |
+| 140 | `position` |
+| 141 | `sections` |
+| 143 | `start` |
+| 148 | `cells` |
+| 154 | `header-title` |
 
 ## web/env.d.ts
 
@@ -829,29 +902,31 @@ Line numbers refer to formatted source, not this generated document.
 | 126 | `error` |
 | 132 | `retry` |
 | 134 | `results` |
-| 135 | `metrics` |
-| 140 | `ledger-heading` |
-| 142 | `agreement` |
-| 147 | `record-filter` |
-| 156 | `class` |
-| 157 | `tabindex` |
-| 158 | `role` |
-| 174 | `records` |
-| 177 | `empty` |
-| 180 | `scenario-note` |
-| 186 | `inspector-heading` |
-| 188 | `selected-record` |
-| 190 | `inspection` |
-| 195 | `export-heading` |
-| 198 | `downloads` |
-| 200 | `evidence-id` |
-| 204 | `guide` |
-| 243 | `href` |
-| 244 | `target` |
-| 245 | `rel` |
-| 248 | `href` |
-| 249 | `target` |
-| 250 | `rel` |
+| 136 | `apid-heading` |
+| 143 | `apid-timelines` |
+| 145 | `metrics` |
+| 150 | `ledger-heading` |
+| 152 | `agreement` |
+| 157 | `record-filter` |
+| 166 | `class` |
+| 167 | `tabindex` |
+| 168 | `role` |
+| 184 | `records` |
+| 187 | `empty` |
+| 190 | `scenario-note` |
+| 196 | `inspector-heading` |
+| 198 | `selected-record` |
+| 200 | `inspection` |
+| 205 | `export-heading` |
+| 208 | `downloads` |
+| 210 | `evidence-id` |
+| 214 | `guide` |
+| 253 | `href` |
+| 254 | `target` |
+| 255 | `rel` |
+| 258 | `href` |
+| 259 | `target` |
+| 260 | `rel` |
 
 ## web/main.ts
 
@@ -887,23 +962,32 @@ Line numbers refer to formatted source, not this generated document.
 | 99 | `filter` |
 | 116 | `render` |
 | 117 | `t` |
-| 149 | `loadCapture` |
-| 150 | `pending` |
-| 151 | `pending` |
-| 152 | `token` |
-| 158 | `response` |
-| 159 | `signal` |
-| 160 | `credentials` |
-| 163 | `evidence` |
-| 165 | `current` |
-| 166 | `selected` |
-| 174 | `current` |
+| 121 | `stream` |
+| 122 | `section` |
+| 123 | `summary` |
+| 125 | `gaps` |
+| 133 | `events` |
+| 134 | `event` |
+| 135 | `item` |
+| 136 | `button` |
+| 140 | `selected` |
 | 184 | `loadCapture` |
-| 187 | `pending` |
-| 194 | `loadCapture` |
-| 198 | `button` |
-| 203 | `selected` |
-| 210 | `loadCapture` |
+| 185 | `pending` |
+| 186 | `pending` |
+| 187 | `token` |
+| 193 | `response` |
+| 194 | `signal` |
+| 195 | `credentials` |
+| 198 | `evidence` |
+| 200 | `current` |
+| 201 | `selected` |
+| 209 | `current` |
+| 219 | `loadCapture` |
+| 222 | `pending` |
+| 229 | `loadCapture` |
+| 233 | `button` |
+| 238 | `selected` |
+| 245 | `loadCapture` |
 
 ## web/style.css
 

@@ -1,5 +1,7 @@
 # CCSDS Telemetry Integrity Lab
 
+The **APID continuity review** workflow groups records into conservative review segments, tracks compressed provisional gaps and recognizes uniquely matching late counters without rewriting original decisions. Ambiguity leaves unresolved values explicitly uncertain. The UI links each event to its original record; JSON/HTML and CLI history preserve the complete ledger. See [the continuity guide](docs/CONTINUITY_REVIEW.md).
+
 **Read the bytes. Know the limits.** An offline Rust/Python telemetry inspection workbench by [Jason Stys](https://github.com/JasonStys).
 
 [![Validation](https://github.com/JasonStys/ccsds-telemetry-integrity-lab/actions/workflows/validate.yml/badge.svg)](https://github.com/JasonStys/ccsds-telemetry-integrity-lab/actions/workflows/validate.yml)

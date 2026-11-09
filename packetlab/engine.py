@@ -14,6 +14,7 @@ from typing import Any
 
 from packetlab.native import inspect_capture
 from packetlab.reference import MAX_CAPTURE, capture_lines, inspect_record
+from packetlab.timeline import timelines
 
 CHOICES = {"payload_limit": (32, 128, 4096), "forward_window": (16, 256, 8191)}
 SCENARIOS = {
@@ -199,6 +200,7 @@ def analyze(text: str, settings: Settings, source: str) -> dict[str, Any]:
         },
         "capture": "\n".join(lines) + ("\n" if lines else ""),
         "rows": rows,
+        "apid_timelines": timelines(rows),
         "totals": {
             "records": len(rows),
             "accepted": sum(row["code"] == "accepted" for row in rows),
