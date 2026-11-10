@@ -12,6 +12,7 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
 
+from packetlab import __version__
 from packetlab.native import inspect_capture
 from packetlab.reference import MAX_CAPTURE, capture_lines, inspect_record
 from packetlab.timeline import timelines
@@ -192,7 +193,7 @@ def analyze(text: str, settings: Settings, source: str) -> dict[str, Any]:
             }
         )
     result = {
-        "version": "1.0.0",
+        "version": __version__,
         "scenario": source,
         "settings": {
             "payload_limit": settings.payload_limit,

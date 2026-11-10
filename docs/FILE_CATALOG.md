@@ -19,12 +19,14 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/ARCHITECTURE.md` — # Architecture and decisions
 - `docs/CONTINUITY_REVIEW.md` — # APID continuity review
 - `docs/MODEL.md` — # Packet profile and continuity semantics
-- `docs/RELEASE.md` — # Release verification and rollback
+- `docs/RELEASE.md` — # Release, operation and rollback
 - `docs/THIRD_PARTY.md` — # Licensing, toolchain and sources
 - `docs/USER_GUIDE.md` — # User guide and troubleshooting
 - `docs/VALIDATION.md` — # Validation strategy and observed local results
 - `docs/images/inspector.jpg` — Binary screenshot asset from local application validation
 - `docs/images/overview.jpg` — Binary screenshot asset from local application validation
+- `docs/releases/v1.1.0.md` — # Version 1.1.0 — CCSDS Telemetry Integrity Lab
+- `docs/reports/PORTABLE_REFRESH_20261109.md` — # Portable release refresh validation — 2026-11-09
 - `docs/reports/PRACTICAL_WORKFLOWS_20261109.md` — # APID review validation — 2026-11-09
 - `docs/reports/benchmark.json` — Reviewed synthetic packetlab benchmark summaries and deterministic evidence hashes.
 - `docs/reports/ci-baseline.md` — # CI and portable verification record
@@ -39,6 +41,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `packetlab/__main__.py` — """Local website launcher and reproducible export CLI by Jason Stys.
 - `packetlab/engine.py` — """Synthetic captures, continuity review and canonical evidence by Jason Stys.
 - `packetlab/native.py` — """Fixed trusted-worker bridge by Jason Stys.
+- `packetlab/package_info.py` — """Read bounded frozen-build identity by Jason Stys, never a user-profile configuration.
 - `packetlab/reference.py` — """Independent arithmetic/structural Python reference by Jason Stys.
 - `packetlab/reports.py` — """Inert portable exports and explicit immutable SQL history by Jason Stys.
 - `packetlab/resources/history.sql` — -- Immutable local experiment history by Jason Stys. Tables/triggers: docs/CODE_INDEX.md.
@@ -54,14 +57,22 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `rust/lib.rs` — //! Bounded, zero-copy telemetry profile validation by Jason Stys.
 - `rust/main.rs` — //! Fixed-input bounded worker CLI by Jason Stys; stdin is a lab hex-record capture, not RF.
 - `tests/test_io.py` — """CLI, report, SQLite and actual loopback HTTP integration tests by Jason Stys.
+- `tests/test_package_info.py` — """Frozen/source identity and owned-instance guards by Jason Stys.
 - `tests/test_packets.py` — """Independent native/reference contracts and stateful edge cases by Jason Stys.
+- `tests/test_portable_archive.py` — """Real bounded archive/extraction fixtures by Jason Stys; no archive member is executed.
+- `tests/test_release_contract.py` — """Independent release/source/archive authorization cases by Jason Stys.
 - `tests/test_timeline.py` — """Independent sequence-recovery traces by Jason Stys.
 - `tests/ui.spec.ts` — /** Real Rust/service/browser acceptance tests by Jason Stys.
 - `tools/benchmark.py` — """Deterministic cross-language packet contracts and descriptive timing by Jason Stys.
-- `tools/package_app.py` — """Build portable native bundles from reviewed source by Jason Stys.
-- `tools/prepare_release.py` — """Fail-closed draft release preparation by Jason Stys.
-- `tools/smoke_app.py` — """Actual frozen-executable export and loopback smoke test by Jason Stys.
-- `tools/upload_release.py` — """Upload only a freshly smoke-tested native bundle to its draft by Jason Stys.
+- `tools/legacy_smoke.py` — """Actual frozen-executable export and loopback smoke test by Jason Stys.
+- `tools/native_browser.mjs` — /**
+- `tools/native_feature_smoke.mjs` — /** Jason Stys — actual extracted APID timeline recovery, original decisions and evidence download.
+- `tools/package_app.py` — """Build and verify versioned portable applications by Jason Stys.
+- `tools/portable_archive.py` — """Bounded portable archive creation and fresh extraction by Jason Stys.
+- `tools/prepare_release.py` — """Prepare only a new version/source-bound draft by Jason Stys.
+- `tools/release_contract.py` — """Version, source and immutable draft-release contracts by Jason Stys.
+- `tools/smoke_app.py` — """Actual extracted-executable CLI, HTTP and Chromium acceptance by Jason Stys.
+- `tools/upload_release.py` — """Upload one inspected source/version archive pair by Jason Stys.
 - `tools/verify_repo.py` — """Generate/check exact-line code and file inventories by Jason Stys.
 - `tsconfig.json` — Strict TypeScript contracts for browser, unit and end-user test code.
 - `vitest.config.ts` — /** Pure display-logic tests by Jason Stys; configuration inventory: docs/CODE_INDEX.md. */

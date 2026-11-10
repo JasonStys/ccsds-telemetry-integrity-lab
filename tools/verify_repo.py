@@ -30,7 +30,7 @@ SKIP = {
     "test-results",
     "playwright-report",
 }
-SOURCE_SUFFIXES = {".py", ".ts", ".css", ".html", ".sql", ".cpp", ".hpp", ".rs"}
+SOURCE_SUFFIXES = {".mjs", ".py", ".ts", ".css", ".html", ".sql", ".cpp", ".hpp", ".rs"}
 FILE_PURPOSES = {
     "examples/nominal.hex": "Invented newline-delimited hex capture with independent trusted record boundaries.",
     "docs/reports/benchmark.json": "Reviewed synthetic packetlab benchmark summaries and deterministic evidence hashes.",

@@ -105,3 +105,7 @@ Every individual file is summarized in [FILE_CATALOG](docs/FILE_CATALOG.md). [CO
 ## Author, sources and contact
 
 Designed and engineered by [Jason Stys](https://github.com/JasonStys). [Portfolio](https://jasonstys.github.io/portfolio-case-study-site/), [questions/issues](https://github.com/JasonStys/ccsds-telemetry-integrity-lab/issues). MIT original source. Normative field baseline: official [CCSDS 133.0-B-2](https://ccsds.org/Pubs/133x0b2e2.pdf), June 2020, distributed EC2 PDF; the implementation claim remains deliberately restricted. See [model](docs/MODEL.md), [security](SECURITY.md) and [third-party notices](docs/THIRD_PARTY.md). No government, military, NASA or contractor affiliation/endorsement is implied.
+
+## Current portable release preparation
+
+Version 1.1.0 includes the current practical workflow in Windows ZIP and Linux/macOS tar.gz portable folders, with OS/CPU/version labels and source-bound release metadata. Historical 1.0.0 downloads predate these improvements. These are unsigned portable applications, not installers; preserve the entire extracted folder and POSIX links. See [release notes](docs/releases/v1.1.0.md), [local validation](docs/reports/PORTABLE_REFRESH_20261109.md) and [release procedure](docs/RELEASE.md) for exact acceptance and publication boundaries.
