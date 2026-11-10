@@ -262,4 +262,4 @@ def test_fixture_rejection():
         packet(2048, 0)
     with pytest.raises(ValueError):
         packet(42, 0, b"")
-    assert json.loads(json.dumps(build_run(Settings())))["version"] == "1.0.0"
+    assert json.loads(json.dumps(build_run(Settings())))["version"] == "1.1.0"
