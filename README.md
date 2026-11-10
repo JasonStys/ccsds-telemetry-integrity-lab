@@ -26,7 +26,7 @@ This is original educational software, **not a complete CCSDS protocol entity, c
 
 ## Run the app
 
-Download the matching ZIP and `.sha256` from [Releases](https://github.com/JasonStys/ccsds-telemetry-integrity-lab/releases). Verify the digest, extract the **whole directory**, and launch `TelemetryIntegrityLab` (`.exe` on Windows). It starts a loopback service and opens your default browser. Stop its console with Ctrl-C. No global Rust/Python/Node installation, account, cloud API or administrator privileges are required for the portable app.
+Download the Windows x64 ZIP or Linux x64/macOS ARM64 `.tar.gz` archive and matching `.sha256` from the [v1.1.0 release](https://github.com/JasonStys/ccsds-telemetry-integrity-lab/releases/tag/v1.1.0). Preserve POSIX links and executable permissions when extracting. Verify the digest, extract the **whole directory**, and launch `TelemetryIntegrityLab` (`.exe` on Windows). It starts a loopback service and opens your default browser. Stop its console with Ctrl-C. No global Rust/Python/Node installation, account, cloud API or administrator privileges are required for the portable app.
 
 Bundles are **unsigned/not notarized**. Do not bypass OS warnings, disable protection, remove quarantine or run elevated. Use reviewed source if policy blocks unsigned binaries. Native releases target Windows x64, Linux x64 and macOS ARM64—not every OS release or mobile device. The website is a local browser application, not a publicly hosted multi-user service.
 
@@ -106,6 +106,12 @@ Every individual file is summarized in [FILE_CATALOG](docs/FILE_CATALOG.md). [CO
 
 Designed and engineered by [Jason Stys](https://github.com/JasonStys). [Portfolio](https://jasonstys.github.io/portfolio-case-study-site/), [questions/issues](https://github.com/JasonStys/ccsds-telemetry-integrity-lab/issues). MIT original source. Normative field baseline: official [CCSDS 133.0-B-2](https://ccsds.org/Pubs/133x0b2e2.pdf), June 2020, distributed EC2 PDF; the implementation claim remains deliberately restricted. See [model](docs/MODEL.md), [security](SECURITY.md) and [third-party notices](docs/THIRD_PARTY.md). No government, military, NASA or contractor affiliation/endorsement is implied.
 
-## Current portable release preparation
+## Current portable release
 
 Version 1.1.0 includes the current practical workflow in Windows ZIP and Linux/macOS tar.gz portable folders, with OS/CPU/version labels and source-bound release metadata. Historical 1.0.0 downloads predate these improvements. These are unsigned portable applications, not installers; preserve the entire extracted folder and POSIX links. See [release notes](docs/releases/v1.1.0.md), [local validation](docs/reports/PORTABLE_REFRESH_20261109.md) and [release procedure](docs/RELEASE.md) for exact acceptance and publication boundaries.
+
+## Documentation editions
+
+Start with the [organized handbook](docs/handbook.md) for current usage, design, security and test guidance. Reviewed downloadable editions: [project-guide.docx](docs/reports/project-guide.docx) · [validation-review.docx](docs/reports/validation-review.docx) · [validation-evidence.xlsx](docs/reports/validation-evidence.xlsx).
+
+[Publication identities and source scope](docs/reports/publications.json) · [Documentation validation record](docs/reports/documentation-refresh-2026-11-09.md). Historical results retain their own tested revision and date.

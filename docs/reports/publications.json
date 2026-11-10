@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "project": "ccsds-telemetry-integrity-lab",
+  "author": "Jason Stys",
+  "editionDate": "2026-11-09",
+  "sourceBaseline": "97f729a525aab8c9388c24db26748c475c88d82d",
+  "sourceUrl": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/tree/97f729a525aab8c9388c24db26748c475c88d82d",
+  "functionalEvidenceBaseline": "97f729a525aab8c9388c24db26748c475c88d82d",
+  "evidenceObservedAt": "2026-11-10T05:25:40.628667+00:00",
+  "workflowEvidence": [
+    {
+      "conclusion": "success",
+      "databaseId": 42752438406,
+      "event": "push",
+      "headSha": "97f729a525aab8c9388c24db26748c475c88d82d",
+      "name": "CodeQL",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/actions/runs/42752438406"
+    },
+    {
+      "conclusion": "success",
+      "databaseId": 42752438449,
+      "event": "push",
+      "headSha": "97f729a525aab8c9388c24db26748c475c88d82d",
+      "name": "Validation",
+      "status": "completed",
+      "url": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/actions/runs/42752438449"
+    }
+  ],
+  "summary": "The released 1.1.0 portable integrity lab includes per-APID continuity timelines: inspect provisional gaps and late recovery, follow ambiguity boundaries and retain every original parser decision in the downloaded evidence.",
+  "rationale": "The safe Rust parser, independent Python reference and seeded fuzz checks remain unchanged. An extracted-app journey independently checks counters 50, 52, 51 and 53, a recovered provisional gap and unchanged late-or-reset review totals, then compares the real downloaded report with the API result. Coherent Cargo/Python/npm versions and runtime notices keep the new portable release aligned with its source.",
+  "limitations": [
+    "Restricted record-delimited educational CCSDS profile; no live radio/spacecraft integration, raw byte-stream resynchronization or payload authentication.",
+    "Timeline segments are review boundaries, not proof of true sender sessions; provisional recovery does not establish permanent packet loss.",
+    "Unsigned desktop portable folders, not system installers or clean-machine proof. Three-OS extracted-native checks drive an owned URL; default OS browser opening remains manual."
+  ],
+  "documents": [
+    {
+      "filename": "project-guide.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 84254,
+      "sha256": "39a508a6eb32aa2965b95a5d91c8e96d53ca1d8bc44d0f82df93d5f9ab9276c1",
+      "sourceBaseline": "97f729a525aab8c9388c24db26748c475c88d82d",
+      "visualReview": {
+        "approved": true,
+        "method": "Every rendered page individually viewed at readable original resolution",
+        "pageCount": 5,
+        "renderedPageSha256": {
+          "page-1.png": "9375581f2f938a16e2a1ab1edb3874afc0be8a24ab336ff11b1c3f82ae87102e",
+          "page-2.png": "7798f4c5540ac4cf1cf587dbecf710b5e08a924cff164b1f526ed22cf497e5f2",
+          "page-3.png": "de4c8d272a5364c947de0d3d971d824e7255dc050a87c4ccd26c6909059232bf",
+          "page-4.png": "ef4bbbab77350026734cfbe498bfdb987a492b33cd0dbd76ac1511926ac7c803",
+          "page-5.png": "e3ea6a6d80147f69e6e63e1ee5ae75330d33458bf1b06d5567ab4761d7a48592"
+        }
+      }
+    },
+    {
+      "filename": "validation-review.docx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "bytes": 42092,
+      "sha256": "3fdbd3d23ce788a48e182226aa8f26ec2a05bedefc729541130419bfb7a30b6d",
+      "sourceBaseline": "97f729a525aab8c9388c24db26748c475c88d82d",
+      "visualReview": {
+        "approved": true,
+        "method": "Every rendered page individually viewed at readable original resolution",
+        "pageCount": 3,
+        "renderedPageSha256": {
+          "page-1.png": "bf348334bcf07d984d35679e9769ba3acdfc4769113e75c6fae0283051846464",
+          "page-2.png": "a8ef1b57b39716b68947f245b0e6c17790b377883e2f201a1641737cfa0f1636",
+          "page-3.png": "54f39e7e11e7d4210cff28f910be88f6a7727965a1a05ca2024c17d133fc2c31"
+        }
+      }
+    },
+    {
+      "filename": "validation-evidence.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "bytes": 7357,
+      "sha256": "a772669cc9b93ed7198535253eb6c6137cf5465aae7938c0ff4a074c6d3887f0",
+      "sourceBaseline": "97f729a525aab8c9388c24db26748c475c88d82d",
+      "visualReview": {
+        "approved": true,
+        "tabsReviewed": ["Workflow evidence", "Test sources"],
+        "previewSha256": {
+          "workflow-evidence.png": "d6941cd21a2dabe9bb66cefc05909ddb0073f7d1c3c261a6a674c237f41e27e8",
+          "test-sources.png": "2c5cdf04180fe29ff78ac5719fad4bb047a8c9f46e9ab5b676a305c392659e5f"
+        },
+        "tables": [
+          {
+            "name": "WorkflowEvidence",
+            "range": "A7:D9",
+            "autoFilter": true
+          },
+          {
+            "name": "TestSources",
+            "range": "A7:C16",
+            "autoFilter": true
+          }
+        ],
+        "formulaCount": 4,
+        "failureSensitivityReceiptPassed": true,
+        "formulaErrors": 0
+      }
+    }
+  ],
+  "scope": "Reviewed documentation editions of the cited source. Checksums identify bytes, not authorship. Historical measurements retain their own dates; integration CI must be checked separately."
+}

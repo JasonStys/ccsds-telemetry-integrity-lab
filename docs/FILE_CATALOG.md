@@ -23,6 +23,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/THIRD_PARTY.md` — # Licensing, toolchain and sources
 - `docs/USER_GUIDE.md` — # User guide and troubleshooting
 - `docs/VALIDATION.md` — # Validation strategy and observed local results
+- `docs/handbook.md` — Documentation entry point, edition boundaries and reproducible usage/design/security/test references.
 - `docs/images/inspector.jpg` — Binary screenshot asset from local application validation
 - `docs/images/overview.jpg` — Binary screenshot asset from local application validation
 - `docs/releases/v1.1.0.md` — # Version 1.1.0 — CCSDS Telemetry Integrity Lab
@@ -30,6 +31,11 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/reports/PRACTICAL_WORKFLOWS_20261109.md` — # APID review validation — 2026-11-09
 - `docs/reports/benchmark.json` — Reviewed synthetic packetlab benchmark summaries and deterministic evidence hashes.
 - `docs/reports/ci-baseline.md` — # CI and portable verification record
+- `docs/reports/documentation-refresh-2026-11-09.md` — Observed documentation integration checks, reviewed bytes and future CI boundary.
+- `docs/reports/project-guide.docx` — Reviewed Word guide to this exact source revision and practical scope.
+- `docs/reports/publications.json` — Exact reviewed Office identities, page/tab scopes and immutable source baseline.
+- `docs/reports/validation-evidence.xlsx` — Reviewed Excel workflow and test-source Tables with recalculated outcome formulas.
+- `docs/reports/validation-review.docx` — Reviewed Word validation observations with explicit test and analysis limits.
 - `examples/nominal.hex` — Invented newline-delimited hex capture with independent trusted record boundaries.
 - `launcher.py` — """Portable application entry point by Jason Stys; main and argv: docs/CODE_INDEX.md.
 - `licenses/PYTHON.txt` — A. HISTORY OF THE SOFTWARE
@@ -61,6 +67,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `tests/test_package_info.py` — """Frozen/source identity and owned-instance guards by Jason Stys.
 - `tests/test_packets.py` — """Independent native/reference contracts and stateful edge cases by Jason Stys.
 - `tests/test_portable_archive.py` — """Real bounded archive/extraction fixtures by Jason Stys; no archive member is executed.
+- `tests/test_publication_text.py` — """Jason Stys: actual Office ZIP fixtures retain text scanning and reject unknown content.
 - `tests/test_release_contract.py` — """Independent release/source/archive authorization cases by Jason Stys.
 - `tests/test_timeline.py` — """Independent sequence-recovery traces by Jason Stys.
 - `tests/ui.spec.ts` — /** Real Rust/service/browser acceptance tests by Jason Stys.
@@ -72,6 +79,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `tools/package_app.py` — """Build and verify versioned portable applications by Jason Stys.
 - `tools/portable_archive.py` — """Bounded portable archive creation and fresh extraction by Jason Stys.
 - `tools/prepare_release.py` — """Prepare only a new version/source-bound draft by Jason Stys.
+- `tools/publication_text.py` — """Jason Stys: inspect only named reviewed Office editions without hiding their XML.
 - `tools/release_contract.py` — """Version, source and immutable draft-release contracts by Jason Stys.
 - `tools/smoke_app.py` — """Actual extracted-executable CLI, HTTP and Chromium acceptance by Jason Stys.
 - `tools/upload_release.py` — """Upload one inspected source/version archive pair by Jason Stys.
