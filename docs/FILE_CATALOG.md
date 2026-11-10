@@ -56,6 +56,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `rust-toolchain.toml` — # Reviewed compiler pin by Jason Stys. CI installs this exact toolchain, without cache uploads.
 - `rust/lib.rs` — //! Bounded, zero-copy telemetry profile validation by Jason Stys.
 - `rust/main.rs` — //! Fixed-input bounded worker CLI by Jason Stys; stdin is a lab hex-record capture, not RF.
+- `tests/test_draft_lookup.py` — """Independent real-shape draft API contract fixtures by Jason Stys.
 - `tests/test_io.py` — """CLI, report, SQLite and actual loopback HTTP integration tests by Jason Stys.
 - `tests/test_package_info.py` — """Frozen/source identity and owned-instance guards by Jason Stys.
 - `tests/test_packets.py` — """Independent native/reference contracts and stateful edge cases by Jason Stys.
@@ -64,6 +65,7 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `tests/test_timeline.py` — """Independent sequence-recovery traces by Jason Stys.
 - `tests/ui.spec.ts` — /** Real Rust/service/browser acceptance tests by Jason Stys.
 - `tools/benchmark.py` — """Deterministic cross-language packet contracts and descriptive timing by Jason Stys.
+- `tools/draft_lookup.py` — """Bounded authenticated draft lookup by Jason Stys.
 - `tools/legacy_smoke.py` — """Actual frozen-executable export and loopback smoke test by Jason Stys.
 - `tools/native_browser.mjs` — /**
 - `tools/native_feature_smoke.mjs` — /** Jason Stys — actual extracted APID timeline recovery, original decisions and evidence download.
