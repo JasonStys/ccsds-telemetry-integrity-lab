@@ -32,11 +32,16 @@ Every tracked-intent file; dependencies/private outputs are excluded.
 - `docs/reports/benchmark.json` — Reviewed synthetic packetlab benchmark summaries and deterministic evidence hashes.
 - `docs/reports/ci-baseline.md` — # CI and portable verification record
 - `docs/reports/documentation-refresh-2026-11-09.md` — Observed documentation integration checks, reviewed bytes and future CI boundary.
+- `docs/reports/installed-windows-2026-11-10.md` — # Installed Windows application validation — 10 November 2026
 - `docs/reports/project-guide.docx` — Reviewed Word guide to this exact source revision and practical scope.
 - `docs/reports/publication-package-boundary-2026-11-10.md` — # Reviewed Office package boundary — November 10, 2026
 - `docs/reports/publications.json` — Exact reviewed Office identities, page/tab scopes and immutable source baseline.
 - `docs/reports/validation-evidence.xlsx` — Reviewed Excel workflow and test-source Tables with recalculated outcome formulas.
 - `docs/reports/validation-review.docx` — Reviewed Word validation observations with explicit test and analysis limits.
+- `docs/reports/windows-application-guide.docx` — Individually reviewed installed-app guide with real screenshots, worked workflow, source excerpts and operating limits.
+- `docs/reports/windows-application-guide.json` — Exact illustrated-guide, screenshot and rendered-page identities plus bounded validation observations.
+- `docs/screenshots/windows-application/01-late-gap-recovery.png` — Binary screenshot asset from local application validation
+- `docs/screenshots/windows-application/02-empty-capture.png` — Binary screenshot asset from local application validation
 - `examples/nominal.hex` — Invented newline-delimited hex capture with independent trusted record boundaries.
 - `launcher.py` — """Portable application entry point by Jason Stys; main and argv: docs/CODE_INDEX.md.
 - `licenses/PYTHON.txt` — A. HISTORY OF THE SOFTWARE

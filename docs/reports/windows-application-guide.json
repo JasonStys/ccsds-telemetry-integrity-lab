@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "repository": "ccsds-telemetry-integrity-lab",
+  "runtimeVersion": "1.1.0",
+  "runtimeSource": "97f729a525aab8c9388c24db26748c475c88d82d",
+  "createdAt": "2026-11-10T23:50:20.135Z",
+  "author": "Jason Stys",
+  "document": "windows-application-guide.docx",
+  "sha256": "c94f16080f344e9e1d26c208b319dc6a9f5999564b333f47de940cd844d84f37",
+  "screenshots": [
+    {
+      "file": "01-late-gap-recovery.png",
+      "sha256": "d99f4c083e53f5db6cd15fad1833929dfbc83dfc3e5deeced3e122d37f3d74b3",
+      "width": 1003,
+      "height": 439,
+      "caption": "Actual installed application showing provisional sequence-gap recovery. Captured during the accepted native user journey with prepared synthetic inputs."
+    },
+    {
+      "file": "02-empty-capture.png",
+      "sha256": "f1f881747db9b58080c60a841018e39f05e74ca4d51fbc9bd7d2d1b410860563",
+      "width": 1003,
+      "height": 194,
+      "caption": "Actual installed application showing empty capture without invented apid. Captured during the accepted native user journey with prepared synthetic inputs."
+    }
+  ],
+  "snippets": [
+    {
+      "file": "packetlab/timeline.py",
+      "first": 51,
+      "last": 71,
+      "sha256": "cf9a1376e16127d113d0a6899961dc99c2f62400b16b9eef7d00ff738d596352",
+      "url": "https://github.com/JasonStys/ccsds-telemetry-integrity-lab/blob/97f729a525aab8c9388c24db26748c475c88d82d/packetlab/timeline.py#L51"
+    }
+  ],
+  "observedTests": [
+    {
+      "name": "Published package",
+      "observed": "Exact public release, provider/sidecar hashes and installed resources verified; installed bytes unchanged.",
+      "result": "Passed"
+    },
+    {
+      "name": "Actual native core",
+      "observed": "The existing packaged CLI/API and native feature acceptance helper passed on the installed executable.",
+      "result": "Passed"
+    },
+    {
+      "name": "Scenario evidence",
+      "observed": "APID 42 sequence 51 recovered a provisional gap at record 2. Its original late-or-reset disposition remained; an empty capture did not invent a stream.",
+      "result": "Passed"
+    },
+    {
+      "name": "UI and cleanup",
+      "observed": "Actual compiled-application browser journey passed. Both images were individually inspected; cleanup left no owned child process.",
+      "result": "Passed"
+    }
+  ],
+  "visualReview": {
+    "approved": true,
+    "pageCount": 4,
+    "reviewedAt": "2026-11-11T01:38:49.624462+00:00",
+    "reviewers": [
+      "audit_apps"
+    ],
+    "method": "Every page individually viewed at original resolution; unchanged previously reviewed pages retained only after exact SHA-256 match.",
+    "pageSHA256": {
+      "1": "59fbf511176a9a2fc24dc27945645496c5734f67581b1129a1122b52dac6b7ad",
+      "2": "54e7b8e7a826a0415d2f088b162e272c4f1cac0dbb646a897251248f18fd0119",
+      "3": "f350b66300dcea9120dfd748d209067e4167508d338a38eeccb0f1949c92eeb4",
+      "4": "e0c9a60172f78d46ede8897cbf31a2edf5b20154070306b4405f9cebee66d6ac"
+    },
+    "ooxmlSchema": "passed",
+    "issues": []
+  }
+}
